@@ -100,3 +100,36 @@ button:hover {
 .bump {
     transform: scale(1.4);
 }
+.qty-box {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.qty-box button {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    border: none;
+    background: #ff6f61;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.qty-box span {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.add-btn {
+    margin-top: 10px;
+}
+
+/* animation class */
+.bump {
+    transform: scale(1.4);
+}
+
