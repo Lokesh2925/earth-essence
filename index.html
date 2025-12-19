@@ -29,7 +29,16 @@
         <img src="images/redwine.jpeg">
         <h3>Redwine Soap</h3>
         <p class="price">₹150</p>
-        <button onclick="addToCart('Redwine Soap',150)">Add to Cart</button>
+        <div class="qty-box" id="qty-Redwine-Soap">
+    <button onclick="decreaseQty('Redwine Soap',150)">−</button>
+    <span>0</span>
+    <button onclick="increaseQty('Redwine Soap',150)">+</button>
+</div>
+
+<button class="add-btn" onclick="addToCart('Redwine Soap',150,this)">
+    Add to Cart
+</button>
+
     </div>
 
     <!-- PRODUCT 2 -->
@@ -37,7 +46,16 @@
         <img src="images/winter.jpeg">
         <h3>Winter Soap</h3>
         <p class="price">₹120</p>
-        <button onclick="addToCart('Winter Soap',120)">Add to Cart</button>
+        <div class="qty-box" id="qty-Winter-Soap">
+    <button onclick="decreaseQty('Winter Soap',120)">−</button>
+    <span>0</span>
+    <button onclick="increaseQty('Winter Soap',120)">+</button>
+</div>
+
+<button class="add-btn" onclick="addToCart('Winter Soap',120,this)">
+    Add to Cart
+</button>
+
     </div>
 
     <!-- PRODUCT 3 -->
@@ -45,7 +63,16 @@
         <img src="images/pack.jpeg">
         <h3>Face pack</h3>
         <p class="price">₹20</p>
-        <button onclick="addToCart('Face Pack',20)">Add to Cart</button>
+        <div class="qty-box" id="qty-Face-pack">
+    <button onclick="decreaseQty('Face pack',20)">−</button>
+    <span>0</span>
+    <button onclick="increaseQty('Face pack',20)">+</button>
+</div>
+
+<button class="add-btn" onclick="addToCart('Face pack',20,this)">
+    Add to Cart
+</button>
+
     </div>
 
     <div style="text-align:center; margin:40px;">
@@ -59,39 +86,86 @@
 
 <!-- JAVASCRIPT -->
 <script>
-let cart = [];
+let cart = {};
 let cartCount = 0;
 
-function addToCart(product, price) {
+function addToCart(product, price, btn) {
 
-    cart.push({ name: product, price: price });
-    cartCount++;
+    if (!cart[product]) {
+        cart[product] = { price: price, qty: 1 };
+        cartCount++;
+    }
 
-    let countEl = document.getElementById("cart-count");
-    countEl.innerText = cartCount;
+    updateUI(product, btn);
+    updateCartCount();
+}
 
-    // animation
-    countEl.classList.add("bump");
-    setTimeout(() => {
-        countEl.classList.remove("bump");
-    }, 300);
+function increaseQty(product, price) {
+    cart[product].qty++;
+    updateQtyUI(product);
+}
+
+function decreaseQty(product, price) {
+    cart[product].qty--;
+
+    if (cart[product].qty === 0) {
+        delete cart[product];
+        cartCount--;
+        resetUI(product);
+    } else {
+        updateQtyUI(product);
+    }
+
+    updateCartCount();
+}
+
+function updateUI(product, btn) {
+    btn.style.display = "none";
+    let box = document.getElementById("qty-" + product.replaceAll(" ", "-"));
+    box.style.display = "flex";
+    box.querySelector("span").innerText = 1;
+}
+
+function updateQtyUI(product) {
+    let box = document.getElementById("qty-" + product.replaceAll(" ", "-"));
+    box.querySelector("span").innerText = cart[product].qty;
+}
+
+function resetUI(product) {
+    let box = document.getElementById("qty-" + product.replaceAll(" ", "-"));
+    box.style.display = "none";
+    box.nextElementSibling.style.display = "block";
+}
+
+function updateCartCount() {
+    let totalQty = 0;
+
+    for (let item in cart) {
+        totalQty += cart[item].qty;
+    }
+
+    document.getElementById("cart-count").innerText = totalQty;
 }
 
 function checkout() {
 
-    if (cart.length === 0) {
+    if (Object.keys(cart).length === 0) {
         alert("Cart is empty!");
         return;
     }
 
-    let phone = "917842501780"; // your WhatsApp number
+    let phone = "917842501780";
     let message = "Hello, I want to place an order:\n\n";
     let total = 0;
+    let i = 1;
 
-    cart.forEach((item, index) => {
-        message += (index + 1) + ". " + item.name + " - ₹" + item.price + "\n";
-        total += item.price;
-    });
+    for (let item in cart) {
+        let qty = cart[item].qty;
+        let price = cart[item].price;
+        message += i + ". " + item + " × " + qty + " = ₹" + (qty * price) + "\n";
+        total += qty * price;
+        i++;
+    }
 
     message += "\nTotal Amount: ₹" + total;
     message += "\n\nPlease collect my delivery address.";
@@ -100,14 +174,8 @@ function checkout() {
         "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
         "_blank"
     );
-
-    // reset cart
-    cart = [];
-    cartCount = 0;
-    document.getElementById("cart-count").innerText = 0;
 }
 </script>
-
 
 
 </body>
