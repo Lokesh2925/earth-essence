@@ -14,11 +14,18 @@
         <h1>Earth Essence</h1>
     </div>
 
-<div class="cart">
-    🛒 Cart <span id="cart-count">0</span>
-</div>
+    <div class="header-actions">
+        <div class="cart" id="cartIcon" onclick="openCart()">
+           🛒 Cart <span id="cart-count">0</span>
+       </div>
 
+
+        <button class="checkout-top" onclick="checkout()">
+            Checkout & Order on WhatsApp
+        </button>
+    </div>
 </header>
+
 
 
 <!-- PRODUCTS -->
@@ -26,16 +33,19 @@
 
     <!-- PRODUCT 1 -->
     <div class="card">
-        <img src="images/redwine.jpeg">
+        <img src="images/redwine.jpeg"
+     class="product-img"
+     onclick="openImage(this.src)">
+
         <h3>Redwine Soap</h3>
         <p class="price">₹150</p>
         <div class="qty-box" id="qty-Redwine-Soap">
-    <button onclick="decreaseQty('Redwine Soap',150)">−</button>
+    <button onclick="decreaseQty('Redwine Soap')">−</button>
     <span>0</span>
-    <button onclick="increaseQty('Redwine Soap',150)">+</button>
+    <button onclick="increaseQty('Redwine Soap')">+</button>
 </div>
 
-<button class="add-btn" onclick="addToCart('Redwine Soap',150,this)">
+<button class="add-btn" data-price="150" onclick="addToCart('Redwine Soap',this)">
     Add to Cart
 </button>
 
@@ -43,16 +53,19 @@
 
     <!-- PRODUCT 2 -->
     <div class="card">
-        <img src="images/winter.jpeg">
+        <img src="images/winter.jpeg"
+     class="product-img"
+     onclick="openImage(this.src)">
+
         <h3>Winter Soap</h3>
         <p class="price">₹120</p>
         <div class="qty-box" id="qty-Winter-Soap">
-    <button onclick="decreaseQty('Winter Soap',120)">−</button>
+    <button onclick="decreaseQty('Winter Soap')">−</button>
     <span>0</span>
-    <button onclick="increaseQty('Winter Soap',120)">+</button>
+    <button onclick="increaseQty('Winter Soap')">+</button>
 </div>
 
-<button class="add-btn" onclick="addToCart('Winter Soap',120,this)">
+<button class="add-btn" data-price="120" onclick="addToCart('Winter Soap',this)">
     Add to Cart
 </button>
 
@@ -60,26 +73,699 @@
 
     <!-- PRODUCT 3 -->
     <div class="card">
-        <img src="images/pack.jpeg">
+        <img src="images/pack.jpeg"
+     class="product-img"
+     onclick="openImage(this.src)">
+
         <h3>Face pack</h3>
         <p class="price">₹20</p>
         <div class="qty-box" id="qty-Face-pack">
-    <button onclick="decreaseQty('Face pack',20)">−</button>
+    <button onclick="decreaseQty('Face pack')">−</button>
     <span>0</span>
-    <button onclick="increaseQty('Face pack',20)">+</button>
+    <button onclick="increaseQty('Face pack')">+</button>
 </div>
 
-<button class="add-btn" onclick="addToCart('Face pack',20,this)">
+<button class="add-btn" data-price="20"onclick="addToCart('Face pack',this)">
+    Add to Cart
+</button>
+
+    </div>
+ 
+  <!-- PRODUCT 4 -->
+    <div class="card">
+        <img src="images/lipbalm.jpeg"
+     class="product-img"
+     onclick="openImage(this.src)">
+
+        <h3>Lip Balm</h3>
+        <p class="price">₹150</p>
+        <div class="qty-box" id="qty-Lip-Balm">
+    <button onclick="decreaseQty('Lip Balm')">−</button>
+    <span>0</span>
+    <button onclick="increaseQty('Lip Balm')">+</button>
+</div>
+
+<button class="add-btn" data-price="150" onclick="addToCart('Lip Balm',this)">
     Add to Cart
 </button>
 
     </div>
 
-    <div style="text-align:center; margin:40px;">
-    <button onclick="checkout()" style="padding:15px 30px; font-size:18px;">
-        Checkout & Order on WhatsApp
-    </button>
+<!-- PRODUCT 5 -->
+    <div class="card">
+        <img src="images/minisoaps.jpeg"
+     class="product-img"
+     onclick="openImage(this.src)">
+
+        <h3>Mini Soaps</h3>
+        <p class="price">₹20</p>
+        <div class="qty-box" id="qty-Mini-Soaps">
+    <button onclick="decreaseQty('Mini Soaps')">−</button>
+    <span>0</span>
+    <button onclick="increaseQty('Mini Soaps')">+</button>
+</div>
+
+<button class="add-btn" data-price="20" onclick="addToCart('Mini Soaps',this)">
+    Add to Cart
+</button>
+
     </div>
+
+<!-- PRODUCT 6 -->
+    <div class="card">
+        <img src="images/ubtan.jpeg"
+     class="product-img"
+     onclick="openImage(this.src)">
+
+        <h3>Ubtan Soap</h3>
+        <p class="price">₹150</p>
+        <div class="qty-box" id="qty-Ubtan-Soap">
+    <button onclick="decreaseQty('Ubtan Soap')">−</button>
+    <span>0</span>
+    <button onclick="increaseQty('Ubtan Soap')">+</button>
+</div>
+
+<button class="add-btn" data-price="150" onclick="addToCart('Ubtan Soap',this)">
+    Add to Cart
+</button>
+
+    </div>
+
+<!-- PRODUCT 7 -->
+    <div class="card">
+        <img src="images/allergy.jpeg"
+     class="product-img"
+     onclick="openImage(this.src)">
+
+        <h3>Skin Allergy Soap</h3>
+        <p class="price">₹150</p>
+        <div class="qty-box" id="qty-Skin-Allergy-Soap">
+    <button onclick="decreaseQty('Skin Allergy Soap')">−</button>
+    <span>0</span>
+    <button onclick="increaseQty('Skin Allergy Soap')">+</button>
+</div>
+
+<button class="add-btn" data-price="150" onclick="addToCart('Skin Allergy Soap',this)">
+    Add to Cart
+</button>
+
+    </div>
+
+<!-- PRODUCT 8 -->
+    <div class="card">
+        <img src="images/papaya.jpeg"
+     class="product-img"
+     onclick="openImage(this.src)">
+
+        <h3>Papaya Soap</h3>
+        <p class="price">₹120</p>
+        <div class="qty-box" id="qty-Papaya-Soap">
+    <button onclick="decreaseQty('Papaya Soap')">−</button>
+    <span>0</span>
+    <button onclick="increaseQty('Papaya Soap')">+</button>
+</div>
+
+<button class="add-btn" data-price="120" onclick="addToCart('Papaya Soap',this)">
+    Add to Cart
+</button>
+
+    </div>
+
+<!-- PRODUCT 9 -->
+    <div class="card">
+       <img src="images/chorcoal.jpeg"
+     class="product-img"
+     onclick="openImage(this.src)">
+
+        <h3>Charcoal Soap</h3>
+        <p class="price">₹120</p>
+        <div class="qty-box" id="qty-Charcoal-Soap">
+    <button onclick="decreaseQty('Charcoal Soap')">−</button>
+    <span>0</span>
+    <button onclick="increaseQty('Charcoal Soap')">+</button>
+</div>
+
+<button class="add-btn" data-price="120" onclick="addToCart('Charcoal Soap',this)">
+    Add to Cart
+</button>
+
+    </div>
+
+<!-- PRODUCT 10 -->
+    <div class="card">
+    <img src="images/alovera.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Alovera Gel</h3>
+
+    <p class="price">₹<span id="price-Alovera-Gel">80</span> (100 ml)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn" onclick="addFixedMlToCart('Alovera Gel',100,80,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 11 -->
+    <div class="card">
+    <img src="images/henna.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Henna Powder</h3>
+
+    <p class="price">₹<span id="price-Henna-Powder">80</span> (100 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Henna Powder',100,80,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 12 -->
+    <div class="card">
+    <img src="images/jungle.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Jungle Geranium</h3>
+
+    <p class="price">₹<span id="price-Jungle-Geranium">50</span> (50 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Jungle Geranium',50,50,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 13 -->
+    <div class="card">
+    <img src="images/leaves.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Curry Leaves Powder</h3>
+
+    <p class="price">₹<span id="price-Curry-Leaves-Powder">60</span> (100 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Curry Leaves Powder',100,60,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 14 -->
+    <div class="card">
+    <img src="images/indigo.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Indigo Powder</h3>
+
+    <p class="price">₹<span id="price-Indigo-Powder">100</span> (100 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Indigo Powder',100,100,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 15 -->
+  <div class="card">
+    <img src="images/multani.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Multani Mitti</h3>
+
+    <p class="price">₹<span id="price-Multani-Mitti">300</span> (200 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Multani Mitti',300,200,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 16 -->
+    <div class="card">
+    <img src="images/moisturizer.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Moisturizer</h3>
+
+    <p class="price">₹<span id="price-Moisturizer">250</span> (100 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Moisturizer',100,250,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 17 -->
+    <div class="card">
+    <img src="images/orange.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Orange Peel Powder</h3>
+
+    <p class="price">₹<span id="price-Orange-Peel-Powder">200</span> (250 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Orange Peel Powder',250,200,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 18 -->
+    <div class="card">
+    <img src="images/hibicus.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Hibicus Powder</h3>
+
+    <p class="price">₹<span id="price-Hibicus-Powder">80</span> (50 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Hibicus Powder',50,80,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 19 -->
+   <div class="card">
+    <img src="images/conditioner.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Conditioner</h3>
+
+    <p class="price">₹<span id="price-Conditioner">80</span> (100 ml)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn" onclick="addFixedMlToCart('Conditioner',100,80,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 20 -->
+   <div class="card">
+    <img src="images/pooja.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Pooja Items Cleaning Liquid</h3>
+
+    <p class="price">₹<span id="price-Pooja-Items-Cleaning-Liquid">50</span> (100 ml)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn" onclick="addFixedMlToCart('Pooja Items Cleaning Liquid',100,50,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 21 -->
+    <div class="card">
+    <img src="images/serum.jpeg" class="product-img" onclick="openImage(this.src)">
+    <h3>Serum</h3>
+
+    <!-- ML VARIANTS -->
+    <div class="variant-box">
+        <button class="variant active"
+                onclick="selectMlVariant(this,'Serum',5,30)">
+            5 ml
+        </button>
+
+        <button class="variant"
+                onclick="selectMlVariant(this,'Serum',30,200)">
+            30 ml
+        </button>
+    </div>
+
+    <p class="price">₹<span id="price-Serum">30</span></p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn" onclick="addMlProductToCart('Serum',this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 22 -->
+    <div class="card">
+    <img src="images/hair.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Hair Pack</h3>
+
+    <p class="price">₹<span id="price-Hair-Pack">80</span> (50 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Hair Pack',50,80,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+<!-- PRODUCT 23 -->
+    <div class="card">
+    <img src="images/shampoo.jpeg" class="product-img" onclick="openImage(this.src)">
+    <h3>Shampoo</h3>
+
+    <!-- ML VARIANTS -->
+    <div class="variant-box">
+        <button class="variant active"
+                onclick="selectMlVariant(this,'Shampoo',30,30)">
+            30 ml
+        </button>
+
+        <button class="variant"
+                onclick="selectMlVariant(this,'Shampoo',500,300)">
+            500 ml
+        </button>
+    </div>
+
+    <p class="price">₹<span id="price-Shampoo">30</span></p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn" onclick="addMlProductToCart('Shampoo',this)">
+        Add to Cart
+    </button>
+</div>
+
+<!-- PRODUCT 24 -->
+     <div class="card">
+    <img src="images/oil.jpeg" class="product-img" onclick="openImage(this.src)">
+    <h3>Hair Oil</h3>
+
+    <!-- ML VARIANTS -->
+    <div class="variant-box">
+        <button class="variant active"
+                onclick="selectMlVariant(this,'Hair Oil',30,30)">
+            30 ml
+        </button>
+
+        <button class="variant"
+                onclick="selectMlVariant(this,'Hair Oil',500,450)">
+            500 ml
+        </button>
+    </div>
+
+    <p class="price">₹<span id="price-Hair Oil">30</span></p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn" onclick="addMlProductToCart('Hair Oil',this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 25 -->
+   <div class="card">
+    <img src="images/washing.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Washing Machine Liquid</h3>
+
+    <p class="price">₹<span id="price-Washing-Machine-Liquid">120</span> (1 litre)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedLitreToCart('Washing Machine Liquid',1,120,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 26 -->
+    <div class="card">
+    <img src="images/grape.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Grape Bunch Soap</h3>
+
+    <p class="price">₹<span id="price-Grape-Bunch-Soap">250</span> (1 bunch)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedUnitToCart('Grape Bunch Soap','1 bunch',250,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 27 -->
+    <div class="card">
+    <img src="images/combo.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Hair Combo (Pack, Oil, Shampoo)</h3>
+
+    <p class="price">₹120</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+        onclick="addFixedUnitToCart(
+            'Hair Combo (Pack, Oil, Shampoo)',
+            'combo pack',
+            120,
+            this
+        )">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 28 -->
+    <div class="card">
+    <img src="images/beetroot.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Beetroot Powder</h3>
+
+    <p class="price">₹<span id="price-Beetroot-Powder">150</span> (100 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Beetroot Powder',100,150,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 29 -->
+    <div class="card">
+    <img src="images/moringa.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Moringa Powder</h3>
+
+    <p class="price">₹<span id="price-Moringa-Powder">100</span> (100 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Moringa Powder',100,100,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 30 -->
+    <div class="card">
+    <img src="images/bath.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Bath Powder</h3>
+
+    <p class="price">₹<span id="price-Bath-Powder">100</span> (100 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Bath Powder',100,100,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 31 -->
+    <div class="card">
+    <img src="images/pasupu.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Kasturi Pasupu</h3>
+
+    <p class="price">₹<span id="price-Kasturi-Pasupu">130</span> (100 g)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedGramToCart('Kasturi Pasupu',100,130,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 32 -->
+    <div class="card">
+    <img src="images/shikai.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Shikai Powder</h3>
+
+    <p class="price">₹<span id="price-Shikai-Powder">400</span> (1 kg)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedKgToCart('Shikai Powder',1,400,this)">
+        Add to Cart
+    </button>
+</div>
+
+
+
+<!-- PRODUCT 33 -->
+    <div class="card">
+    <img src="images/kunkudukayi.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Konkudukai Powder</h3>
+
+    <p class="price">₹<span id="price-Konkudukai-Powder">350</span> (1 kg)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn"
+            onclick="addFixedKgToCart('Konkudukai Powder',1,350,this)">
+        Add to Cart
+    </button>
+</div>
+
+<!-- PRODUCT 34 -->
+<div class="card">
+    <img src="images/fashwash.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Fash Wash</h3>
+
+    <p class="price">₹<span id="price-Fash-Wash">200</span> (100 ml)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn" onclick="addFixedMlToCart('Fash Wash',100,200,this)">
+        Add to Cart
+    </button>
+</div>
+
+<!-- PRODUCT 35 -->
+<div class="card">
+    <img src="images/bathwash.jpeg"
+         class="product-img"
+         onclick="openImage(this.src)">
+
+    <h3>Bath Wash</h3>
+
+    <p class="price">₹<span id="price-Bath-Wash">400</span> (200 ml)</p>
+
+    Qty:
+    <input type="number" min="1" value="1">
+
+    <button class="add-btn" onclick="addFixedMlToCart('Bath Wash',200,400,this)">
+        Add to Cart
+    </button>
+</div>
+
 
 
 </section>
@@ -89,28 +775,365 @@
 let cart = {};
 let cartCount = 0;
 
-function addToCart(product, price, btn) {
+function addToCart(product, btn) {
 
-    if (!cart[product]) {
-        cart[product] = { price: price, qty: 1 };
-        cartCount++;
+    let price = 0;
+    let variant = "";
+
+    // grams / ml product
+    let priceSpan = document.getElementById(
+        "price-" + product.replaceAll(" ", "-")
+    );
+
+    if (priceSpan) {
+        price = Number(priceSpan.innerText);
+
+        let select = btn.parentElement.querySelector("select");
+        if (select) {
+            variant = select.options[select.selectedIndex].text;
+        }
+    }
+    // fixed price product
+    else if (btn.dataset.price) {
+        price = Number(btn.dataset.price);
+    }
+
+    if (price <= 0 || isNaN(price)) {
+        alert("Price error for " + product);
+        return;
+    }
+
+    // 🔥 UNIQUE CART KEY
+    let cartKey = variant ? `${product} | ${variant}` : product;
+
+    if (!cart[cartKey]) {
+        cart[cartKey] = {
+                            name: product,
+                            variant: variant,
+                            price: price,
+                            qty: 1,
+                            image: btn.closest(".card").querySelector("img").src
+                   };
+
+    } else {
+        cart[cartKey].qty++;
     }
 
     updateUI(product, btn);
     updateCartCount();
 }
+function selectGramVariant(btn, product, grams, price) {
 
-function increaseQty(product, price) {
-    cart[product].qty++;
-    updateQtyUI(product);
+    let box = btn.parentElement;
+    box.querySelectorAll(".variant").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    box.dataset.grams = grams;
+    box.dataset.price = price;
+
+    document.getElementById(
+        "price-" + product.replaceAll(" ", "-")
+    ).innerText = price;
+}
+function selectMlVariant(btn, product, ml, price) {
+
+    let box = btn.parentElement;
+
+    box.querySelectorAll(".variant")
+        .forEach(b => b.classList.remove("active"));
+
+    btn.classList.add("active");
+
+    // store selected ml & price
+    box.dataset.ml = ml;
+    box.dataset.price = price;
+
+    document.getElementById(
+        "price-" + product.replaceAll(" ", "-")
+    ).innerText = price;
+}
+function addFixedMlToCart(product, ml, price, btn) {
+
+    let card = btn.closest(".card");
+    let qty = Number(card.querySelector("input").value);
+
+    if (qty <= 0 || isNaN(qty)) {
+        alert("Enter valid quantity");
+        return;
+    }
+
+    // 🔥 unique key
+    let cartKey = product + " | " + ml + " ml";
+
+    if (!cart[cartKey]) {
+        cart[cartKey] = {
+            name: product,
+            variant: ml + " ml",
+            price: price,
+            qty: qty,
+            image: card.querySelector("img").src
+        };
+    } else {
+        cart[cartKey].qty += qty;
+    }
+
+    updateCartCount();
+
+    // optional reset
+    card.querySelector("input").value = 1;
+}
+function addFixedGramToCart(product, grams, price, btn) {
+
+    let card = btn.closest(".card");
+    let qty = Number(card.querySelector("input").value);
+
+    if (qty <= 0 || isNaN(qty)) {
+        alert("Enter valid quantity");
+        return;
+    }
+
+    // 🔥 unique cart key
+    let cartKey = product + " | " + grams + " g";
+
+    if (!cart[cartKey]) {
+        cart[cartKey] = {
+            name: product,
+            variant: grams + " g",
+            price: price,
+            qty: qty,
+            image: card.querySelector("img").src
+        };
+    } else {
+        cart[cartKey].qty += qty;
+    }
+
+    updateCartCount();
+
+    // optional: reset qty
+    card.querySelector("input").value = 1;
+}
+function addFixedLitreToCart(product, litre, price, btn) {
+
+    let card = btn.closest(".card");
+    let qty = Number(card.querySelector("input").value);
+
+    if (qty <= 0 || isNaN(qty)) {
+        alert("Enter valid quantity");
+        return;
+    }
+
+    // 🔥 unique cart key
+    let cartKey = product + " | " + litre + " litre";
+
+    if (!cart[cartKey]) {
+        cart[cartKey] = {
+            name: product,
+            variant: litre + " litre",
+            price: price,
+            qty: qty,
+            image: card.querySelector("img").src
+        };
+    } else {
+        cart[cartKey].qty += qty;
+    }
+
+    updateCartCount();
+
+    // optional reset
+    card.querySelector("input").value = 1;
 }
 
-function decreaseQty(product, price) {
-    cart[product].qty--;
 
-    if (cart[product].qty === 0) {
-        delete cart[product];
-        cartCount--;
+
+
+function addGramProductToCart(product, btn) {
+
+    let card = btn.closest(".card");
+    let variantBox = card.querySelector(".variant-box");
+
+    let grams = variantBox.dataset.grams;
+    let price = Number(variantBox.dataset.price);
+    let qty = Number(card.querySelector("input").value);
+
+    if (!grams || qty <= 0) {
+        alert("Select grams & quantity");
+        return;
+    }
+
+    let key = product + " | " + grams + " g";
+
+    if (!cart[key]) {
+        cart[key] = {
+            name: product,
+            variant: grams + " g",
+            price: price,
+            qty: qty,
+            image: card.querySelector("img").src
+        };
+    } else {
+        cart[key].qty += qty;
+    }
+
+    updateCartCount();
+}
+function updateCartCount() {
+    let total = 0;
+    for (let key in cart) total += cart[key].qty;
+
+    document.getElementById("cart-count").innerText = total;
+
+    document.querySelector(".checkout-top").disabled = total === 0;
+}
+
+function addMlProductToCart(product, btn) {
+
+    let card = btn.closest(".card");
+    let variantBox = card.querySelector(".variant-box");
+
+    let ml = variantBox.dataset.ml;
+    let price = Number(variantBox.dataset.price);
+    let qty = Number(card.querySelector("input").value);
+
+    if (!ml || qty <= 0 || isNaN(qty)) {
+        alert("Select ml & valid quantity");
+        return;
+    }
+
+    // 🔥 UNIQUE KEY (this fixes your bug)
+    let cartKey = product + " | " + ml + " ml";
+
+    if (!cart[cartKey]) {
+        cart[cartKey] = {
+            name: product,
+            variant: ml + " ml",
+            price: price,
+            qty: qty,
+            image: card.querySelector("img").src
+        };
+    } else {
+        cart[cartKey].qty += qty;
+    }
+
+    updateCartCount();
+
+    // optional: reset qty input
+    card.querySelector("input").value = 1;
+}
+function addFixedUnitToCart(product, unitLabel, price, btn) {
+
+    let card = btn.closest(".card");
+    let qty = Number(card.querySelector("input").value);
+
+    if (qty <= 0 || isNaN(qty)) {
+        alert("Enter valid quantity");
+        return;
+    }
+
+    // 🔥 unique cart key
+    let cartKey = product + " | " + unitLabel;
+
+    if (!cart[cartKey]) {
+        cart[cartKey] = {
+            name: product,
+            variant: unitLabel,   // "1 bunch"
+            price: price,
+            qty: qty,
+            image: card.querySelector("img").src
+        };
+    } else {
+        cart[cartKey].qty += qty;
+    }
+
+    updateCartCount();
+
+    // optional reset
+    card.querySelector("input").value = 1;
+}
+function addFixedKgToCart(product, kg, price, btn) {
+
+    let card = btn.closest(".card");
+    let qty = Number(card.querySelector("input").value);
+
+    if (qty <= 0 || isNaN(qty)) {
+        alert("Enter valid quantity");
+        return;
+    }
+
+    // 🔥 unique cart key
+    let cartKey = product + " | " + kg + " kg";
+
+    if (!cart[cartKey]) {
+        cart[cartKey] = {
+            name: product,
+            variant: kg + " kg",
+            price: price,
+            qty: qty,
+            image: card.querySelector("img").src
+        };
+    } else {
+        cart[cartKey].qty += qty;
+    }
+
+    updateCartCount();
+
+    // optional reset
+    card.querySelector("input").value = 1;
+}
+
+
+
+
+
+function increaseQty(product) {
+
+    // 🔥 last added variant increase cheyyali
+    let lastKey = null;
+
+    for (let key in cart) {
+        if (cart[key].name === product) {
+            lastKey = key;
+        }
+    }
+
+    if (!lastKey) return;
+
+    cart[lastKey].qty++;
+
+    updateQtyUI(product);
+    updateCartCount();
+}
+
+function decreaseQty(product) {
+
+    let keys = [];
+
+    for (let key in cart) {
+        if (cart[key].name === product) {
+            keys.push(key);
+        }
+    }
+
+    if (keys.length === 0) return;
+
+    // 🔥 last variant first decrease
+    let lastKey = keys[keys.length - 1];
+
+    cart[lastKey].qty--;
+
+    if (cart[lastKey].qty === 0) {
+        delete cart[lastKey];
+    }
+
+    // if all variants removed → reset UI
+    let stillExists = false;
+    for (let key in cart) {
+        if (cart[key].name === product) {
+            stillExists = true;
+            break;
+        }
+    }
+
+    if (!stillExists) {
         resetUI(product);
     } else {
         updateQtyUI(product);
@@ -118,6 +1141,7 @@ function decreaseQty(product, price) {
 
     updateCartCount();
 }
+
 
 function updateUI(product, btn) {
     btn.style.display = "none";
@@ -127,14 +1151,44 @@ function updateUI(product, btn) {
 }
 
 function updateQtyUI(product) {
-    let box = document.getElementById("qty-" + product.replaceAll(" ", "-"));
-    box.querySelector("span").innerText = cart[product].qty;
+
+    let totalQty = 0;
+
+    for (let key in cart) {
+        if (cart[key].name === product) {
+            totalQty += cart[key].qty;
+        }
+    }
+
+    let box = document.getElementById(
+        "qty-" + product.replaceAll(" ", "-")
+    );
+
+    if (box) {
+        box.style.display = "flex";
+        box.querySelector("span").innerText = totalQty;
+    }
 }
 
+
 function resetUI(product) {
-    let box = document.getElementById("qty-" + product.replaceAll(" ", "-"));
+
+    let box = document.getElementById(
+        "qty-" + product.replaceAll(" ", "-")
+    );
+
+    if (!box) return;
+
+    // hide quantity box
     box.style.display = "none";
-    box.nextElementSibling.style.display = "block";
+    box.querySelector("span").innerText = 0;
+
+    // 🔥 show Add to Cart button again
+    let card = box.closest(".card");
+    let addBtn = card.querySelector(".add-btn");
+    if (addBtn) {
+        addBtn.style.display = "block";
+    }
 }
 
 function updateCartCount() {
@@ -147,35 +1201,182 @@ function updateCartCount() {
     document.getElementById("cart-count").innerText = totalQty;
 }
 
+function changePrice(select, product) {
+
+    let price = Number(select.value);
+    let variant = select.options[select.selectedIndex].text;
+
+    document.getElementById(
+        "price-" + product.replaceAll(" ", "-")
+    ).innerText = price;
+
+    if (cart[product]) {
+        cart[product].price = price;
+        cart[product].variant = variant;
+    }
+}
+function openImage(src) {
+    document.getElementById("modalImg").src = src;
+    document.getElementById("imgModal").style.display = "flex";
+}
+
+function closeImage() {
+    document.getElementById("imgModal").style.display = "none";
+}
+
+
+
 function checkout() {
 
-    if (Object.keys(cart).length === 0) {
-        alert("Cart is empty!");
-        return;
-    }
-
-    let phone = "917842501780";
-    let message = "Hello, I want to place an order:\n\n";
     let total = 0;
+    let message = "Hello, I want to place an order:\n\n";
     let i = 1;
 
-    for (let item in cart) {
-        let qty = cart[item].qty;
-        let price = cart[item].price;
-        message += i + ". " + item + " × " + qty + " = ₹" + (qty * price) + "\n";
-        total += qty * price;
+    for (let key in cart) {
+
+        let item = cart[key];
+        let amount = item.qty * item.price;
+        total += amount;
+
+        let label = item.variant
+            ? `${item.name} (${item.variant})`
+            : item.name;
+
+        message += `${i}. ${label} × ${item.qty} = ₹${amount}\n`;
         i++;
     }
 
-    message += "\nTotal Amount: ₹" + total;
-    message += "\n\nPlease collect my delivery address.";
+    message += `\nTotal Amount: ₹${total}`;
 
     window.open(
-        "https://wa.me/" + phone + "?text=" + encodeURIComponent(message),
+        "https://wa.me/917842501780?text=" +
+        encodeURIComponent(message),
         "_blank"
     );
 }
+function openCart() {
+    document.getElementById("cartModal").style.display = "flex";
+    renderCart();
+}
+
+function closeCart() {
+    document.getElementById("cartModal").style.display = "none";
+}
+
+function renderCart() {
+
+    let container = document.getElementById("cartItems");
+    container.innerHTML = "";
+
+    let total = 0;
+
+    for (let key in cart) {
+
+        let item = cart[key];
+        let amount = item.qty * item.price;
+        total += amount;
+
+        let div = document.createElement("div");
+        div.className = "cart-item";
+
+        div.innerHTML = `
+            <img src="${item.image}" class="cart-img">
+
+            <div class="cart-item-details">
+                <strong>${item.name} ${item.variant ? "(" + item.variant + ")" : ""}</strong>
+
+                <div class="cart-qty">
+                    <button onclick="changeCartQty('${key}', -1)">−</button>
+                    <span>${item.qty}</span>
+                    <button onclick="changeCartQty('${key}', 1)">+</button>
+                </div>
+
+                <div>₹${amount}</div>
+            </div>
+        `;
+
+        container.appendChild(div);
+    }
+
+    document.getElementById("cartTotal").innerText =
+        "Total: ₹" + total;
+}
+function changeCartQty(cartKey, change) {
+
+    if (!cart[cartKey]) return;
+
+    cart[cartKey].qty += change;
+
+    // qty 0 ayithe remove
+    if (cart[cartKey].qty <= 0) {
+        delete cart[cartKey];
+    }
+
+    updateCartCount();
+    renderCart(); // 🔥 cart UI refresh
+}
+
+function flyToCart(imgElement) {
+
+    let cartIcon = document.getElementById("cartIcon");
+    if (!cartIcon || !imgElement) return;
+
+    let imgRect = imgElement.getBoundingClientRect();
+    let cartRect = cartIcon.getBoundingClientRect();
+
+    let flyImg = imgElement.cloneNode(true);
+    flyImg.classList.add("fly-img");
+
+    flyImg.style.left = imgRect.left + "px";
+    flyImg.style.top = imgRect.top + "px";
+
+    document.body.appendChild(flyImg);
+    flyImg.getBoundingClientRect(); // force repaint
+
+    flyImg.style.left = cartRect.left + "px";
+    flyImg.style.top = cartRect.top + "px";
+    flyImg.style.width = "30px";
+    flyImg.style.height = "30px";
+    flyImg.style.opacity = "0.4";
+
+    setTimeout(() => flyImg.remove(), 800);
+}
+
+document.addEventListener("click", function (e) {
+
+    let btn = e.target.closest(".add-btn");
+    if (!btn) return; // not add to cart
+
+    let card = btn.closest(".card");
+    if (!card) return;
+
+    let img = card.querySelector("img");
+    if (!img) return;
+
+    flyToCart(img);
+});
+
+
 </script>
+<!-- IMAGE POPUP MODAL -->
+<div id="imgModal" class="img-modal" onclick="closeImage()">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImg">
+</div>
+<!-- CART MODAL -->
+<div id="cartModal" class="cart-modal">
+    <div class="cart-box">
+        <h2>Your Cart</h2>
+
+        <div id="cartItems"></div>
+
+        <h3 id="cartTotal">Total: ₹0</h3>
+
+        <button onclick="checkout()">Checkout on WhatsApp</button>
+        <button onclick="closeCart()">Close</button>
+    </div>
+</div>
+
 
 
 </body>
